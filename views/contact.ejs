@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
-</head>
-<body>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
     <h1>This is my contact page!</h1>
-    <br>
-    <h3>
-        Name : Bintang Pramudya Farandhi
-        <br>
-        Email : bintangpramudyafarandhi@gmail.com
-        <br>
-        Phone no. : 087723804253
-    </h3>
+
+    <br />
 
     <h3>Links</h3>
     <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+      <li><a href="">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
     </ul>
-</body>
+
+    <h3>
+      Name : Bintang Pramudya Farandhi
+      <br />
+      Email : bintangpramudyafarandhi@gmail.com
+      <br />
+      Phone no. : 087723804253
+    </h3>
+
+    <% if (cont.length <1) { %>
+    <p>Data not found!</p>
+    <% } else { %>
+    <table>
+      <tr>
+        <th>Nama</th>
+        <th>Email</th>
+      </tr>
+      <% cont.forEach(contact => { %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+      </tr>
+      <% }) %>
+    </table>
+    <% } %>
+  </body>
 </html>

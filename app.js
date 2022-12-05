@@ -7,7 +7,8 @@ app.set('view engine','ejs')
 
 app.get('/', (req,res) => {
   res.render('index', {
-    nama : "Bintang Pramudya Farandhi"
+    nama : "Bintang Pramudya Farandhi",
+    title : "My Page"
   }) 
 })
 
@@ -16,7 +17,23 @@ app.get('/about', (req,res) => {
 })
 
 app.get('/contact', (req,res) => {
-  res.render('contact')
+  cont =[
+    // {
+    //   name: 'bintang',
+    //   email: 'bintang@gmail.com',
+    // },
+    // {
+    //   name: 'desman',
+    //   email: 'desman@gmail.com',
+    // },
+    // {
+    //   name: 'gio',
+    //   email: 'gio@gmail.com'
+    // }
+  ]
+  res.render('contact', {
+    cont
+  })
 })
 
 app.get('/', (req, res) => {
